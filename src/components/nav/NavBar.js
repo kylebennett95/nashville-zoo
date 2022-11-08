@@ -1,14 +1,14 @@
 import React from "react";
-import { StaffViews } from "./StaffViews";
-import { PatronViews } from "./PatronViews";
+import { PatronNavBar } from "../nav/PatronNavBar";
+import { StaffNavBar } from "../nav/StaffNavBar";
 
-export const ApplicationViews = () => {
+export const NavBar = () => {
   const localProjectUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localProjectUser);
 
   if (projectUserObject.staff) {
-    return <StaffViews />;
+    return <StaffNavBar />;
   } else {
-    return <PatronViews />;
+    return <PatronNavBar />;
   }
 };
