@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export const StaffUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate()
 
   const localProjectUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localProjectUser);
@@ -18,7 +19,7 @@ export const StaffUpcomingEvents = () => {
   return (
     <>
       <h2>Upcoming Events</h2>
-      <button>Add Event</button>
+      <button onClick={() => navigate("/staffUpcomingEvents/AddEvent")}>Add Event</button>
       <article className="events">
         {events.map((event) => {
           return (
