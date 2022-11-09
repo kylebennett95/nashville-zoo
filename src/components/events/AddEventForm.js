@@ -14,8 +14,8 @@ export const AddEvent = () => {
     const localProjectUser = localStorage.getItem("project_user");
     const projectUserObject = JSON.parse(localProjectUser);
 
-    const handleSaveButtonClick = (event) => {
-        event.preventDefault()
+    const handleSaveButtonClick = (e) => {
+        e.preventDefault()
 
         const eventToSendToAPI = {
             attractionName: event.attractionName,
