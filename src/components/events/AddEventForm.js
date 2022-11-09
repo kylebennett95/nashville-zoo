@@ -54,7 +54,7 @@ return (
                         (evt) => {
                             const copy = {...event}
                             copy.description = evt.target.value
-                            update(copy)
+                            setEvent(copy)
                         }
                     } />
             </div>
@@ -72,7 +72,7 @@ return (
                         (evt) => {
                             const copy = {...event}
                             copy.attractionName = evt.target.value
-                            update(copy)
+                            setEvent(copy)
                         }
                     } />
             </div>
@@ -89,7 +89,7 @@ return (
                         (evt) => {
                             const copy = {...event}
                             copy.date = evt.target.value
-                            update(copy)
+                            setEvent(copy)
                         }
                     } />
             </div>
