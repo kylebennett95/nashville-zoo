@@ -18,7 +18,7 @@ export const StaffUpcomingEvents = () => {
   return (
     <>
       <h2>Upcoming Events</h2>
-
+      <button>Add Event</button>
       <article className="events">
         {events.map((event) => {
           return (
