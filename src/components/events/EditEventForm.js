@@ -38,7 +38,7 @@ export const EditEventForm = () => {
 
     return (
         <form className="eventForm">
-            <h2 className="eventForm__title">Add Event</h2>
+            <h2 className="eventForm__title">Edit Event</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Description:</label>
@@ -96,7 +96,7 @@ export const EditEventForm = () => {
             <button 
             onClick={(clickEvent) => {handleSaveButtonClick(clickEvent)}}
             className="btn btn-primary">
-                Add Event
+                Edit Event
             </button>
         </form>
     )
