@@ -25,7 +25,7 @@ export const StaffUpcomingEvents = () => {
         {events.map((event) => {
           return (
             <section className="event" key={`event--${event.id}`}>
-              <Link to = {`/staffUpcomingEvents/${event.id}/edit`}>Edit this Event</Link>
+              <button><Link to = {`/staffUpcomingEvents/${event.id}/edit`}>Edit this Event</Link></button>
               <button>Save</button>
               <header>{event.attractionName}</header>
               <div>{event.description}</div>
