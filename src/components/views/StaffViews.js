@@ -20,7 +20,7 @@ export const StaffViews = () => {
           </>
         }
       >
-        <Route path="/staffUpcomingEvents/attractionsId/edit" element={ <EditEventForm /> } />
+        <Route path="/staffUpcomingEvents/:attractionsId/edit" element={ <EditEventForm /> } />
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="StaffUpcomingEvents" element={<StaffUpcomingEvents />} />
         <Route path="SavedEvents" element={<SavedEvents />} />
