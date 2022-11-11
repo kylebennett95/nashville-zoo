@@ -4,6 +4,7 @@ import { StaffUpcomingEvents } from "../events/StaffUpcomingEvents";
 import { AboutUs } from "../events/AboutUs";
 import { SavedEvents } from "../events/SavedEvents";
 import { AddEvent } from "../events/AddEventForm";
+import { EditEventForm } from "../events/EditEventForm"
 
 export const StaffViews = () => {
   return (
@@ -19,6 +20,7 @@ export const StaffViews = () => {
           </>
         }
       >
+        <Route path="/staffUpcomingEvents/attractionsId/edit" element={ <EditEventForm /> } />
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="StaffUpcomingEvents" element={<StaffUpcomingEvents />} />
         <Route path="SavedEvents" element={<SavedEvents />} />

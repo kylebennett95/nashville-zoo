@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const StaffUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -24,7 +25,7 @@ export const StaffUpcomingEvents = () => {
         {events.map((event) => {
           return (
             <section className="event" key={`event--${event.id}`}>
-              <button>Edit</button>
+              <Link to = {`/staffUpcomingEvents/${event.id}/edit`}>Edit this Event</Link>
               <button>Save</button>
               <header>{event.attractionName}</header>
               <div>{event.description}</div>
