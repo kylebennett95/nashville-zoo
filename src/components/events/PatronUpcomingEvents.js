@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { CommentCard } from "./CommentCard";
 
 export const PatronUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
-  const [comments, setComments] = useState({
-    commentDescription: "",
-  });
+
 
   const navigate = useNavigate();
 
@@ -13,28 +12,12 @@ export const PatronUpcomingEvents = () => {
   const projectUserObject = JSON.parse(localProjectUser);
 
   useEffect(() => {
-    fetch(`http://localhost:8088/comments?_expand=attractions`)
+    fetch(`http://localhost:8088/attractions`)
       .then((response) => response.json())
       .then((eventArray) => {
         setEvents(eventArray);
       });
   }, []);
-
-  const handleSaveButtonClick = (e) => {
-    e.preventDefault();
-
-    return fetch(`http://localhost:8088/comments/${events.id}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comments),
-    })
-      .then((response) => response.json())
-      .then(() => {
-        navigate("/StaffUpcomingEvents");
-      });
-  };
 
   return (
     <>
@@ -45,27 +28,10 @@ export const PatronUpcomingEvents = () => {
           return (
             <section className="event" key={`event--${event.id}`}>
               <button>Save</button>
-              <header>{event.attractions.attractionName}</header>
-              <div>{event.attractions.description}</div>
-              <fieldset>
-                <div className="form-group">
-                  <label htmlFor="text">Leave a comment:</label>
-                  <input
-                    required
-                    autoFocus
-                    type="text"
-                    className="form-control"
-                    value="Enter comment here"
-                    onChange={(evt) => {
-                      const copy = { ...event };
-                      copy.commentDescription = evt.target.value;
-                      setEvents(copy);
-                    }}
-                  />
-                </div>
-              </fieldset>
-              <button>Submit</button>
-              <div>Coming to You on {event.attractions.date}</div>
+              <header>{event.attractionName}</header>
+              <div>{event.description}</div>
+              <CommentCard />
+              <div>Coming to You on {event.date}</div>
             </section>
           );
         })}
