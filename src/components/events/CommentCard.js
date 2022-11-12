@@ -5,11 +5,10 @@ export const CommentCard = () => {
     const [comments, setComments] = useState({
         commentDescription: "",
         attractionsId: 0,
-        userId: ""
+        userId: 0
     })
 
     const navigate = useNavigate()
-    const [userId, setUserId] = useState([])
 
     const localProjectUser = localStorage.getItem("project_user");
     const projectUserObject = JSON.parse(localProjectUser);
@@ -21,7 +20,7 @@ export const CommentCard = () => {
             attractionsId: parseInt(comments.attractionsId),
             commentDescription: comments.commentDescription,
             userId: projectUserObject.id
-        }
+        } 
     
         return fetch(`http://localhost:8088/comments`, {
             method: "POST",
