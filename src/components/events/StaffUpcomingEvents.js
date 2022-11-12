@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const StaffUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const localProjectUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localProjectUser);
@@ -25,11 +25,11 @@ export const StaffUpcomingEvents = () => {
         {events.map((event) => {
           return (
             <section className="event" key={`event--${event.id}`}>
-              <button><Link to = {`/staffUpcomingEvents/${event.id}/edit`}>Edit this Event</Link></button>
-              <button>Save</button>
+              <button>
+                <Link to={`/staffUpcomingEvents/${event.id}/edit`}>Edit this Event</Link>
+              </button>
               <header>{event.attractionName}</header>
               <div>{event.description}</div>
-              <button>Leave a Comment</button>
               <div>Coming to You on {event.date}</div>
             </section>
           );
