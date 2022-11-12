@@ -5,21 +5,14 @@ export const CommentCard = () => {
     const [comments, setComments] = useState({
         commentDescription: "",
         attractionsId: 0,
-        userId: 0
+        userId: ""
     })
 
     const navigate = useNavigate()
     const [userId, setUserId] = useState([])
 
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/users?_sort=id&order=desc`)
-            .then(response => response.json())
-            .then((userId) => {
-                setUserId(userId)
-            })
-        },
-        []);
+    const localProjectUser = localStorage.getItem("project_user");
+    const projectUserObject = JSON.parse(localProjectUser);
 
     const handleSaveButtonClick = (e) => {
         e.preventDefault()
@@ -27,7 +20,7 @@ export const CommentCard = () => {
         const commentToSendToAPI = {
             attractionsId: parseInt(comments.attractionsId),
             commentDescription: comments.commentDescription,
-            userId: userId[0].id + 1
+            userId: projectUserObject.id
         }
     
         return fetch(`http://localhost:8088/comments`, {
