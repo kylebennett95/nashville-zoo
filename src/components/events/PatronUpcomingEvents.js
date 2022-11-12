@@ -5,8 +5,9 @@ export const PatronUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
   const [comments, setComments] = useState({
     commentDescription: "",
+  });
 
-  })
+  const navigate = useNavigate();
 
   const localProjectUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localProjectUser);
@@ -20,20 +21,20 @@ export const PatronUpcomingEvents = () => {
   }, []);
 
   const handleSaveButtonClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     return fetch(`http://localhost:8088/comments/${events.id}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(comments)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(comments),
     })
-        .then(response => response.json())
-        .then(() => {
-            navigate("/StaffUpcomingEvents")
-        })
-}
+      .then((response) => response.json())
+      .then(() => {
+        navigate("/StaffUpcomingEvents");
+      });
+  };
 
   return (
     <>
@@ -47,28 +48,28 @@ export const PatronUpcomingEvents = () => {
               <header>{event.attractions.attractionName}</header>
               <div>{event.attractions.description}</div>
               <fieldset>
-            <div className="form-group">
-                <label htmlFor="text">Leave a comment:</label>
-                <input
-                    required autoFocus
+                <div className="form-group">
+                  <label htmlFor="text">Leave a comment:</label>
+                  <input
+                    required
+                    autoFocus
                     type="text"
                     className="form-control"
                     value="Enter comment here"
-                    onChange={
-                        (evt) => {
-                            const copy = {...event}
-                            copy.commentDescription = evt.target.value
-                            setEvents(copy)
-                        }
-                    } />
-            </div>
-            </fieldset> 
-            <button>Submit</button>           
-              <div>Coming to You on {event.date}</div>
+                    onChange={(evt) => {
+                      const copy = { ...event };
+                      copy.commentDescription = evt.target.value;
+                      setEvents(copy);
+                    }}
+                  />
+                </div>
+              </fieldset>
+              <button>Submit</button>
+              <div>Coming to You on {event.attractions.date}</div>
             </section>
           );
         })}
       </article>
-      </>     
-  )
+    </>
+  );
 };
