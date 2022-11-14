@@ -35,7 +35,7 @@ export const StaffNavBar = () => {
           ""
         )}
       </div>
-      <div className="LogoContainer">
+      <div>
         <img src={require("./Logo.png")} alt="Logo" className="Logo" />
       </div>
     </div>

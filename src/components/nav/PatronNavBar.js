@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./NavBar.css"
+import "./NavBar.css";
 
 export const PatronNavBar = () => {
   const navigate = useNavigate();
@@ -38,6 +38,9 @@ export const PatronNavBar = () => {
       ) : (
         ""
       )}
+      <div>
+        <img src={require("./Logo.png")} alt="Logo" className="Logo" />
+      </div>
     </div>
   );
 };
