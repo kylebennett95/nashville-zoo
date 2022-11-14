@@ -12,9 +12,6 @@ export const PatronViews = () => {
         path="/"
         element={
           <>
-            <h1>Patron Views</h1>
-            <div>Upcoming Events</div>
-
             <Outlet />
           </>
         }

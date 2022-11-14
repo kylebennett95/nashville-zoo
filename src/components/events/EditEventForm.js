@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditEventForm.css"
+
 
 export const EditEventForm = () => {
   const [event, setEvent] = useState({
@@ -36,26 +38,9 @@ export const EditEventForm = () => {
   };
 
   return (
-    <form className="eventForm">
+    <form className="eventForm-edit">
       <h2 className="eventForm__title">Edit Event</h2>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="description">Description:</label>
-          <input
-            required
-            autoFocus
-            type="text"
-            className="form-control"
-            placeholder="Brief description of problem"
-            value={event.description}
-            onChange={(evt) => {
-              const copy = { ...event };
-              copy.description = evt.target.value;
-              setEvent(copy);
-            }}
-          />
-        </div>
-      </fieldset>
+      <div className=""></div>
       <fieldset>
         <div className="form-group">
           <label htmlFor="attractionName">Name:</label>
@@ -69,6 +54,24 @@ export const EditEventForm = () => {
             onChange={(evt) => {
               const copy = { ...event };
               copy.attractionName = evt.target.value;
+              setEvent(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="description">Description:</label>
+          <input
+            required
+            autoFocus
+            type="text"
+            className="form-control"
+            placeholder="Brief description of problem"
+            value={event.description}
+            onChange={(evt) => {
+              const copy = { ...event };
+              copy.description = evt.target.value;
               setEvent(copy);
             }}
           />

@@ -1,28 +1,29 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./NavBar.css"
 
 export const PatronNavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <ul className="navbar">
-      <li className="navbar__item active">
+    <div className="navImgContainer">
+      <div className="navbar__item active">
         <Link className="navbar__link" to="/PatronUpcomingEvents">
           Upcoming Events
         </Link>
-      </li>
-      <li className="navbar__item active">
+      </div>
+      <div className="navbar__item active">
         <Link className="navbar__link" to="/SavedEvents">
           Saved Events
         </Link>
-      </li>
-      <li className="navbar__item active">
+      </div>
+      <div className="navbar__item active">
         <Link className="navbar__link" to="/AboutUs">
           About Us
         </Link>
-      </li>
+      </div>
       {localStorage.getItem("project_user") ? (
-        <li className="navbar__item navbar__logout">
+        <div className="navbar__item navbar__logout">
           <Link
             className="navbar__link"
             to=""
@@ -33,10 +34,10 @@ export const PatronNavBar = () => {
           >
             Logout
           </Link>
-        </li>
+        </div>
       ) : (
         ""
       )}
-    </ul>
+    </div>
   );
 };

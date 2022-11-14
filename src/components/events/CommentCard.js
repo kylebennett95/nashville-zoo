@@ -5,7 +5,7 @@ export const CommentCard = ({ attractionsId, event }) => {
   const [comments, setComments] = useState({
     commentDescription: "",
     attractionsId: 0,
-    userId: 0,
+    usersId: 0,
   });
 
   const [newComment, setNewComment] = useState("");
@@ -29,7 +29,7 @@ export const CommentCard = ({ attractionsId, event }) => {
     const commentToSendToAPI = {
       attractionsId: parseInt(attractionsId),
       commentDescription: newComment,
-      userId: projectUserObject.id,
+      usersId: projectUserObject.id,
     };
 
     return fetch(`http://localhost:8088/comments`, {

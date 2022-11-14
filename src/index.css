@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "Glegoo";
+  src: local("Glegoo"), url(./Assets/Glegoo-Regular.ttf) format("woff");
+}
+@font-face {
+  font-family: "Glegoo Bold";
+  src: local("Glegoo"), url(./Assets/Glegoo-Bold.ttf) format("woff");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Glegoo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
