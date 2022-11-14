@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditEventForm.css";
 
 export const EditEventForm = () => {
   const [event, setEvent] = useState({
@@ -38,68 +39,70 @@ export const EditEventForm = () => {
   return (
     <form className="eventForm">
       <h2 className="eventForm__title">Edit Event</h2>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="description">Description:</label>
-          <input
-            required
-            autoFocus
-            type="text"
-            className="form-control"
-            placeholder="Brief description of problem"
-            value={event.description}
-            onChange={(evt) => {
-              const copy = { ...event };
-              copy.description = evt.target.value;
-              setEvent(copy);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="attractionName">Name:</label>
-          <input
-            required
-            autoFocus
-            type="text"
-            className="form-control"
-            placeholder="Add event name"
-            value={event.attractionName}
-            onChange={(evt) => {
-              const copy = { ...event };
-              copy.attractionName = evt.target.value;
-              setEvent(copy);
-            }}
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="date">Date:</label>
-          <input
-            required
-            autoFocus
-            type="date"
-            className="form-control"
-            value={event.date}
-            onChange={(evt) => {
-              const copy = { ...event };
-              copy.date = evt.target.value;
-              setEvent(copy);
-            }}
-          />
-        </div>
-      </fieldset>
+      <div className="formContainer">
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="attractionName">Name:</label>
+            <input
+              required
+              autoFocus
+              type="text"
+              className="form-control"
+              placeholder="Add event name"
+              value={event.attractionName}
+              onChange={(evt) => {
+                const copy = { ...event };
+                copy.attractionName = evt.target.value;
+                setEvent(copy);
+              }}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="description">Description:</label>
+            <input
+              required
+              autoFocus
+              type="text"
+              className="form-control"
+              placeholder="Brief description of problem"
+              value={event.description}
+              onChange={(evt) => {
+                const copy = { ...event };
+                copy.description = evt.target.value;
+                setEvent(copy);
+              }}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="date">Date:</label>
+            <input
+              required
+              autoFocus
+              type="date"
+              className="form-control"
+              value={event.date}
+              onChange={(evt) => {
+                const copy = { ...event };
+                copy.date = evt.target.value;
+                setEvent(copy);
+              }}
+            />
+          </div>
+        </fieldset>
 
-      <button
-        onClick={(clickEvent) => {
-          handleSaveButtonClick(clickEvent);
-        }}
-        className="btn btn-primary"
-      >
-        Edit Event
-      </button>
+        <button
+          onClick={(clickEvent) => {
+            handleSaveButtonClick(clickEvent);
+          }}
+          className="editEvent"
+        >
+          Edit Event
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,0 +1,12 @@
+.editEvent {
+  min-height: 40px;
+  min-width: 14%;
+  margin-right: 3%;
+  background: #4d5a4b;
+  border: none;
+  font-family: "Glegoo";
+  color: blanchedalmond;
+  border-radius: 5px;
+  margin-left: 1050px;
+  margin-bottom: 20px;
+}

@@ -12,9 +12,6 @@ export const StaffViews = () => {
         path="/"
         element={
           <>
-            <h1>Staff Views</h1>
-            <div>Upcoming Events</div>
-
             <Outlet />
           </>
         }
