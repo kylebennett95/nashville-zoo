@@ -12,11 +12,6 @@ export const StaffNavBar = () => {
         </Link>
       </li>
       <li className="navbar__item active">
-        <Link className="navbar__link" to="/SavedEvents">
-          Saved Events
-        </Link>
-      </li>
-      <li className="navbar__item active">
         <Link className="navbar__link" to="/AboutUs">
           About Us
         </Link>
