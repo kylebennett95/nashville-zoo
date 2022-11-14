@@ -30,7 +30,7 @@ export const PatronUpcomingEvents = () => {
               <button>Save</button>
               <header>{event.attractionName}</header>
               <div>{event.description}</div>
-              <CommentCard />
+              <CommentCard attractionsId={event.id}/>
               <div>Coming to You on {event.date}</div>
             </section>
           );
