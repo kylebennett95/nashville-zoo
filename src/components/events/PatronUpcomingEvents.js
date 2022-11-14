@@ -26,13 +26,13 @@ export const PatronUpcomingEvents = () => {
       <article className="events">
         {events.map((event) => {
           return (
-            <section className="event" key={`event--${event.id}`}>
-              <button>Save</button>
-              <header>{event.attractionName}</header>
-              <div>{event.description}</div>
-              <CommentCard attractionsId={event.id}/>
-              <div>Coming to You on {event.date}</div>
-            </section>
+            // <section className="event" key={`event--${event.id}`}>
+            //   <button>Save</button>
+            //   <header>{event.attractionName}</header>
+            //   <div>{event.description}</div>
+              <CommentCard event={event} attractionsId={event.id}/>
+            //   <div>Coming to You on {event.date}</div>
+            // </section>
           );
         })}
       </article>
