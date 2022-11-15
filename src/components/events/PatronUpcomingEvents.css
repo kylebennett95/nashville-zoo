@@ -1,0 +1,52 @@
+.saveEventButton {
+  min-width: 150px;
+  min-height: 35px;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #4d5a4b;
+  border: 1px solid black;
+  color: blanchedalmond;
+}
+
+.eventComment {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.347);
+  max-width: 30vh;
+  min-width: 30vh;
+  max-height: 50vh;
+  min-height: 50vh;
+  background: #d7ddd7;
+  margin-right: 3%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.eventsPatronContainer {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 25px 45px;
+}
+
+.patronFooter {
+  max-height: 10vh;
+  min-height: 10vh;
+}
+
+.patronHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blanchedalmond;
+}
