@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "./PatronUpcomingEvents.css";
 
 export const CommentCard = ({ attractionsId, event }) => {
   const [comments, setComments] = useState({
@@ -66,28 +67,36 @@ export const CommentCard = ({ attractionsId, event }) => {
 
   return (
     <>
-      <section className="event" key={`event--${event.id}`}>
-        <button onClick={() => SaveEvent()}>Save</button>
-        <header>{event.attractionName}</header>
-        <div>{event.description}</div>
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="text">Leave a comment:</label>
-            <input required autoFocus type="text" className="form-control" placeholder="Enter comment here" value={comments.commentDescription} onChange={(e) => setNewComment(e.target.value)} />
-          </div>
-        </fieldset>
-        <button
-          onClick={(clickEvent) => {
-            handleSaveButtonClick(clickEvent);
-          }}
-          className="btn btn-primary"
-        >
-          Submit
-        </button>
-        <button className="btn btn-primary">
-          <Link to={`/AllComments/${attractionsId}`}>All Comments</Link>
-        </button>
-        <div>Coming to You on {event.date}</div>
+      <section className="eventComment" key={`event--${event.id}`}>
+        <div className="patronHeaderCard">
+          <button onClick={() => SaveEvent()} className="EventButton">
+            Save
+          </button>
+          <header>{event.attractionName}</header>
+        </div>
+        <div className="patronBodyCard">
+          <div>{event.description}</div>
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="text">Leave a comment:</label>
+              <input required autoFocus type="text" className="form-control" placeholder="Enter comment here" value={comments.commentDescription} onChange={(e) => setNewComment(e.target.value)} />
+            </div>
+          </fieldset>
+          <button
+            onClick={(clickEvent) => {
+              handleSaveButtonClick(clickEvent);
+            }}
+            className="btn btn-primary"
+          >
+            Submit
+          </button>
+          <button className="btn btn-primary">
+            <Link to={`/AllComments/${attractionsId}`}>All Comments</Link>
+          </button>
+        </div>
+        <div className="patronFooterCard">
+          <div>Coming to You on {event.date}</div>
+        </div>
       </section>
     </>
   );

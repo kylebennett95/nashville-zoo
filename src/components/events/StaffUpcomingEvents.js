@@ -47,6 +47,7 @@ export const StaffUpcomingEvents = () => {
           );
         })}
       </article>
+      <footer className="staffFooter"></footer>
     </div>
   );
 };

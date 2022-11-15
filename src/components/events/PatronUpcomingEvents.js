@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CommentCard } from "./CommentCard";
+import "./PatronUpcomingEvents.css";
 
 export const PatronUpcomingEvents = () => {
   const [events, setEvents] = useState([]);
-
 
   const navigate = useNavigate();
 
@@ -21,21 +21,22 @@ export const PatronUpcomingEvents = () => {
 
   return (
     <>
-      <h2>Upcoming Events</h2>
+      <h2 className="patronHeader">Upcoming Events</h2>
 
-      <article className="events">
+      <article className="eventsPatronContainer">
         {events.map((event) => {
           return (
             // <section className="event" key={`event--${event.id}`}>
             //   <button>Save</button>
             //   <header>{event.attractionName}</header>
             //   <div>{event.description}</div>
-              <CommentCard event={event} attractionsId={event.id}/>
+            <CommentCard event={event} attractionsId={event.id} />
             //   <div>Coming to You on {event.date}</div>
             // </section>
           );
         })}
       </article>
+      <footer className="patronFooter"></footer>
     </>
   );
 };

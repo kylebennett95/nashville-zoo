@@ -123,6 +123,11 @@
   justify-content: flex-end;
 }
 
+.staffFooter{
+  min-height: 28px;
+  max-height: 28px;
+}
+
 html {
   font-family: Glegoo;
 }
