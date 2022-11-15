@@ -69,10 +69,12 @@ export const CommentCard = ({ attractionsId, event }) => {
     <>
       <section className="eventComment" key={`event--${event.id}`}>
         <div className="patronHeaderCard">
-          <button onClick={() => SaveEvent()} className="EventButton">
-            Save
-          </button>
-          <header>{event.attractionName}</header>
+          <div className="buttonContainer">
+            <button onClick={() => SaveEvent()} className="SavedEventButtonPatron">
+              Save
+            </button>
+          </div>
+          <header className="headerCardTitle">{event.attractionName}</header>
         </div>
         <div className="patronBodyCard">
           <div>{event.description}</div>

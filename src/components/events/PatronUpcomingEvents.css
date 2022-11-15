@@ -1,18 +1,20 @@
-.saveEventButton {
+.SavedEventButtonPatron {
   min-width: 150px;
+  max-width: 150px;
   min-height: 35px;
-  position: absolute;
-  right: 5%;
+  max-height: 35px;
+  /* right: 5%;
   top: 15%;
   outline: none;
   border: none;
-  display: flex;
+  display: flex; */
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   background: #4d5a4b;
   border: 1px solid black;
   color: blanchedalmond;
+  margin: 5px;
 }
 
 .eventComment {
@@ -49,4 +51,34 @@
   align-items: center;
   justify-content: center;
   color: blanchedalmond;
+}
+
+.patronHeaderCard {
+  font-size: 25px;
+  font-weight: bolder;
+  /* margin-top: 10%; */
+  max-width: 30vh;
+  min-width: 30vh;
+  max-height: 5vh;
+  min-height: 5vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.headerCardTitle {
+  max-width: 30vh;
+  min-width: 30vh;
+  max-height: 10vh;
+  min-height: 10vh;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.patronBodyCard {
+  margin-top: 30px;
 }
